@@ -1,22 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+
+const movies = [
+  {
+    title: "Child's Play",
+    year: "November 9, 1988",
+    id: 1
+  },
+  {
+    title: "Tremors",
+    year: "January 19, 1990",
+    id: 2
+  },
+  {
+    title: "The Santa Clause",
+    year: "November 11, 1994",
+    id: 3
+  },
+  {
+    title: "Problem Child",
+    year: "July 27, 1990",
+    id: 4
+  },
+  {
+    title: "John Wick",
+    year: "October 14, 2014",
+    id: 5
+  }
+]
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>My Movies</h1>
+        <ul>
+          {movies.map((movie) =>
+            <li 
+              key={movie.id}
+            >
+              {movie.title}
+              <br />
+              {movie.year}
+            </li>
+          )}
+        </ul>
       </header>
     </div>
   );
